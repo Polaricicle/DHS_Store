@@ -8,14 +8,14 @@
     <header>
       <nav>
 		<ul>
-		  <li>Home</li>
-		  <li>Store</li>
-		  <li>About Us</li>
+		  <li><a href = "/">Home</a></li>
+		  <li><a href = "/store">Store</a></li>
+		  <li><a href = "/aboutUs">About Us</a></li>
 		  {% if not session.logged_in %}
-		  <li>Login</li>
+		  <li><a href = "/log">Login</a></li>
 		  {% else %}
-		  <li>Logout</li>
-		  {% end if %}
+		  <li><a href = "/logout">Logout</a></li>
+		  {% endif %}
 		<ul>
 	  </nav>
     </header>
