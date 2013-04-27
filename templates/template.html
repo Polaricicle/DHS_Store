@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DHS Souvenir Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+		<ul>
+		  <li>Home</li>
+		  <li>Store</li>
+		  <li>About Us</li>
+		  {% if not session.logged_in %}
+		  <li>Login</li>
+		  {% else %}
+		  <li>Logout</li>
+		  {% end if %}
+		<ul>
+	  </nav>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+  <footer>
+	<p>Contact: 1234 5678</p>
+	<p>Email: <a id="email" href= "mailto:dhssouvenirexample@example.com" >Souvenir email</a></p>
+	<p>Address: 10 Tanjong Rhu Road Singapore 436895</p>
+  </footer>
+</html>
