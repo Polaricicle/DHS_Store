@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+
+{% block content %}
+	<h3>Souvenir Order Form</h3>
+	<p>Order your souvenirs here!</p>
+  
+    <h2>Orders</h2>
+    <div class="datagrid">
+    <table>
+        {% for o in orders %}
+        <tr> 
+        <tr>{{ o.Order_id }}</tr><br />
+        <tr>{{ o.Total_price }}</tr><br />
+		<tr>{{ o.A4_lecture_pad }}</tr><br />
+		<tr>{{ o.Seven_colour_sticky_note_with_pen }}</tr><br />
+		<tr>{{ o.A5_ring_book }}</tr><br />
+		<tr>{{ o.A5_note_book_with_zip_bag }}</tr><br />
+		<tr>{{ o.Pencil }}</tr><br />
+		<tr>{{ o.Stainless_steel_tumbler }}</tr><br />
+		<tr>{{ o.A4_clear_holder }}</tr><br />
+		<tr>{{ o.A4_vanguard_file }}</tr><br />
+		<tr>{{ o.Name_card_holder }}</tr><br />
+		<tr>{{ o.Umbrella }}</tr><br />
+		<tr>{{ o.School_badge_Junior_High}}</tr><br />
+		<tr>{{ o.School_badge_Senior_High }}</tr><br />
+		<tr>{{ o.Dunman_dolls_pair }}</tr><br />
+        <tr><a href="{{ url_for('delete', Order_id = o.Order_id) }}">Delete</a> </tr>
+        </tr> 
+        {% endfor %} 
+		<form action="{{ url_for('add_pd') }}" method="post">
+			<input type = "submit">
+		</form>
+	</table>
+    </div>
+	
+{% endblock %}
