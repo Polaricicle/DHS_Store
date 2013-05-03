@@ -10,21 +10,35 @@
         {% for o in orders %}
         <tr> 
         <tr>{{ o.Order_id }}</tr><br />
+        <tr><a href="{{ url_for('delete_Order_id', Order_id = o.Order_id) }}">Delete</a> </tr>
         <tr>{{ o.Total_price }}</tr><br />
+		<tr><a href="{{ url_for('delete_Total_price', Total_price = o.Total_price) }}">Delete</a> </tr>
 		<tr>{{ o.A4_lecture_pad }}</tr><br />
+		<tr><a href="{{ url_for('delete_A4_lecture_pad', A4_lecture_pad = o.A4_lecture_pad) }}">Delete</a> </tr>
 		<tr>{{ o.Seven_colour_sticky_note_with_pen }}</tr><br />
+		<tr><a href="{{ url_for('delete_Seven_colour_sticky_note_with_pen', Seven_colour_sticky_note_with_pen = o.Seven_colour_sticky_note_with_pen) }}">Delete</a> </tr>
 		<tr>{{ o.A5_ring_book }}</tr><br />
+		<tr><a href="{{ url_for('delete_A5_ring_book', A5_ring_book = o.A5_ring_book) }}">Delete</a> </tr>
 		<tr>{{ o.A5_note_book_with_zip_bag }}</tr><br />
+		<tr><a href="{{ url_for('delete_A5_note_book_with_zip_bag', A5_note_book_with_zip_bag = o.A5_note_book_with_zip_bag) }}">Delete</a> </tr>
 		<tr>{{ o.Pencil }}</tr><br />
+		<tr><a href="{{ url_for('delete_Pencil', Pencil = o.Pencil) }}">Delete</a> </tr>
 		<tr>{{ o.Stainless_steel_tumbler }}</tr><br />
+		<tr><a href="{{ url_for('delete_Stainless_steel_tumbler', Stainless_steel_tumbler = o.Stainless_steel_tumbler) }}">Delete</a> </tr>
 		<tr>{{ o.A4_clear_holder }}</tr><br />
+		<tr><a href="{{ url_for('delete_A4_clear_holder', A4_clear_holder = o.A4_clear_holder) }}">Delete</a> </tr>
 		<tr>{{ o.A4_vanguard_file }}</tr><br />
+		<tr><a href="{{ url_for('delete_A4_vanguard_file', A4_vanguard_file = o.A4_vanguard_file) }}">Delete</a> </tr>
 		<tr>{{ o.Name_card_holder }}</tr><br />
+		<tr><a href="{{ url_for('delete_Name_card_holder', Name_card_holder = o.Name_card_holder) }}">Delete</a> </tr>
 		<tr>{{ o.Umbrella }}</tr><br />
+		<tr><a href="{{ url_for('delete_Umbrella', Umbrella = o.Umbrella) }}">Delete</a> </tr>
 		<tr>{{ o.School_badge_Junior_High}}</tr><br />
+		<tr><a href="{{ url_for('delete_School_badge_Junior_High', School_badge_Junior_High = o.School_badge_Junior_High) }}">Delete</a> </tr>
 		<tr>{{ o.School_badge_Senior_High }}</tr><br />
+		<tr><a href="{{ url_for('delete_School_badge_Senior_High', School_badge_Senior_High = o.School_badge_Senior_High) }}">Delete</a> </tr>
 		<tr>{{ o.Dunman_dolls_pair }}</tr><br />
-        <tr><a href="{{ url_for('delete', Order_id = o.Order_id) }}">Delete</a> </tr>
+		<tr><a href="{{ url_for('delete_Dunman_dolls_pair', Dunman_dolls_pair = o.Dunman_dolls_pair) }}">Delete</a> </tr>
         </tr> 
         {% endfor %} 
 		<form action="{{ url_for('add_pd') }}" method="post">

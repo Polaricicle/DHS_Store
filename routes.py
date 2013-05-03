@@ -46,9 +46,135 @@ def add_td():
 	return redirect(url_for('confirm'))
 
 @app.route('/delete/<int:Order_id>',)
-def delete(Order_id):
+def delete_Order_id(Order_id):
 	atd = connect_td()
 	cur = atd.execute('delete from TD where Order_id='+str(Order_id))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:Total_price>',)
+def delete_Total_price(Total_price):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where Total_price='+str(Total_price))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:A4_lecture_pad>',)
+def delete_A4_lecture_pad(A4_lecture_pad):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where A4_lecture_pad='+str(A4_lecture_pad))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:Seven_colour_sticky_note_with_pen>',)
+def delete_Seven_colour_sticky_note_with_pen(Seven_colour_sticky_note_with_pen):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where Seven_colour_sticky_note_with_pen='+str(Seven_colour_sticky_note_with_pen))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:A5_ring_book>',)
+def delete_A5_ring_book(A5_ring_book):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where A5_ring_book='+str(A5_ring_book))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:A5_note_book_with_zip_bag>',)
+def delete_A5_note_book_with_zip_bag(A5_note_book_with_zip_bag):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where A5_note_book_with_zip_bag='+str(A5_note_book_with_zip_bag))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:Pencil>',)
+def delete_Pencil(Pencil):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where Pencil='+str(Pencil))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:Stainless_steel_tumbler>',)
+def delete_Stainless_steel_tumbler(Stainless_steel_tumbler):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where Stainless_steel_tumbler='+str(Stainless_steel_tumbler))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:A4_clear_holder>',)
+def delete_A4_clear_holder(A4_clear_holder):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where A4_clear_holder='+str(A4_clear_holder))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:A4_vanguard_file>',)
+def delete_A4_vanguard_file(A4_vanguard_file):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where A4_vanguard_file='+str(A4_vanguard_file))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:Name_card_holder>',)
+def delete_Name_card_holder(Name_card_holder):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where Name_card_holder='+str(Name_card_holder))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:Umbrella>',)
+def delete_Umbrella(Umbrella):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where Umbrella='+str(Umbrella))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:School_badge_Junior_High>',)
+def delete_School_badge_Junior_High(School_badge_Junior_High):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where School_badge_Junior_High='+str(School_badge_Junior_High))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:School_badge_Senior_High>',)
+def delete_School_badge_Senior_High(School_badge_Senior_High):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where School_badge_Senior_High='+str(School_badge_Senior_High))
+	atd.commit()
+	atd.close()
+	flash('Your order was deleted')
+	return redirect(url_for('confirm'))
+	
+@app.route('/delete/<int:Dunman_dolls_pair>',)
+def delete_Dunman_dolls_pair(Dunman_dolls_pair):
+	atd = connect_td()
+	cur = atd.execute('delete from TD where Dunman_dolls_pair='+str(Dunman_dolls_pair))
 	atd.commit()
 	atd.close()
 	flash('Your order was deleted')
@@ -62,13 +188,14 @@ def confirm():
 	atd.close()
 	return render_template('confirm.html', orders = orders)
 	
-@app.route('/add_pd', methods = ['POST'])
+@app.route('/add_pd', methods = ['GET', 'POST'])
 def add_pd():
 	apd = connect_pd()
+	atd = connect_td()
+	aaa = atd.execute('SELECT Order_id, User_id, Total_price, A4_lecture_pad, Seven_colour_sticky_note_with_pen, A5_ring_book, A5_note_book_with_zip_bag, Pencil, Stainless_steel_tumbler, A4_clear_holder, A4_vanguard_file, Name_card_holder, Umbrella, School_badge_Junior_High, School_badge_Senior_High, Dunman_dolls_pair from TD')
 	apd.execute('INSERT INTO PD(Order_id, User_id, Total_price, A4_lecture_pad, Seven_colour_sticky_note_with_pen, A5_ring_book, A5_note_book_with_zip_bag, Pencil, Stainless_steel_tumbler, A4_clear_holder, A4_vanguard_file, Name_card_holder, Umbrella, School_badge_Junior_High, School_badge_Senior_High, Dunman_dolls_pair) SELECT * FROM TD')
 	apd.commit()
 	apd.close()
-	atd = connect_td()
 	atd.execute('DROP TABLE')
 	atd.close()
 	flash('Your order has been confirmed')
