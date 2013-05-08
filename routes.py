@@ -22,6 +22,10 @@ def home():
 def store():
 	return render_template('store.html')
 
+@app.route('/aboutUs')
+def aboutUs():
+	return render_template('aboutUs.html')	
+	
 @app.route('/add_td', methods = ['POST'])	
 def add_td():
 	atd = connect_db()
